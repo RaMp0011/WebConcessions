@@ -1,10 +1,12 @@
-import { useState,useEffect } from "react"
+import { useState} from "react"
 import { useSignup } from "../hooks/useSignup"
+import {motion} from 'framer-motion'
 export default function Signup(){
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const [confirmPassword,setConfirmPassword]=useState('')
     const [match,setmatch]=useState(false)
+    const [admin,setAdmin]=useState(false)
     const {signup,error,isLoading}=useSignup()
 
     // useEffect(()=>{
@@ -18,7 +20,7 @@ export default function Signup(){
         e.preventDefault()
 
         if(password===confirmPassword){
-            await signup(email,password)
+            await signup(email,password,admin)
         }
         else{
             setmatch(true)
@@ -26,7 +28,9 @@ export default function Signup(){
         
     }
     return(
-        <form className='signup' onSubmit={handleSubmit}>
+        <motion.div>
+        <motion.form className='signup' onSubmit={handleSubmit}
+        >
             <h3>Sign up</h3>
             <label>Email</label>
             <input
@@ -48,8 +52,16 @@ export default function Signup(){
             className={match ? "error" : ""}
             />
             {match && <p className="error">Confirm password should matchup with upper</p>}
+            <p for="admin">Admin Signup?</p>
+             <input className="check"
+            id="admin"
+            type='checkbox'
+            onChange={(e)=>{setAdmin(e.target.checked)
+            }}
+            />
             <button disabled={isLoading}>Sign up</button>
             {error && <div className='error'>{error}</div>}
-        </form>
+        </motion.form>
+        </motion.div>
     )
 }

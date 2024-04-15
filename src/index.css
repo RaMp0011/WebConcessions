@@ -11,13 +11,19 @@ body {
   margin: 0;
   font-family: "Poppins";
   background-image: linear-gradient(
-    to right,
+    to left,
     rgba(0, 0, 0, 0.5),
-    rgba(255,255,255,0.2) ), url("../public/bg.jpg");
+    rgba(255,255,255,0.2) ), url("../public/bg4.jpg");
     background-size:cover;
 }
 header {
   background: #59e19f;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(255,255,255,0.2) ),url("../public/header2.jpg");
+    background-size:cover;
+  background-position: 0%;
 }
 header .container {
   max-width: 1400px;
@@ -28,7 +34,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: #fff5f5;
   text-decoration: none;
 }
 .pages{
@@ -105,6 +111,14 @@ input.error {
 }
 p.error{
   color: var(--error);
+}
+input.check{
+  display:flex;
+  position: relative;
+  padding: 0px;
+  right:70px;
+  bottom:33px;
+  margin:0px;
 }
 
 
@@ -200,4 +214,131 @@ p.approve{
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+.Alog{
+  position: relative;
+  left: 260px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create h2{
+  color: rgb(0, 0, 0);
+}
+.create label{
+  color: rgb(0, 0, 0);
+}
+.home h1{
+  color: rgb(0, 0, 0);
+}
+.grant{
+  margin: 10px;
+  color: #1aac83;
+  position:relative;
+}
+.popupContainer {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.boxxcontent{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.popupContent {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.closeButton {
+  color: #aaa;
+  position: absolute;
+  font-size: 28px;
+  top: 50%;
+  right: 80%;
+  padding: 12px 16px;
+  font-weight: bold;
+  transform: translate(0%, -50%);
+
+}
+
+/* .closeButton:hover,
+.closeButton:focus {
+  color: rgb(210, 8, 8);
+  text-decoration: none;
+  cursor: pointer;
+} */
+.outer {
+  position: relative;
+  /* left: 90%; */
+  margin-left:auto;
+  width: 20px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+.cross{ 
+  font-size: .4em; 
+  line-height: 3em;
+  text-transform: uppercase;
+  color: #000000;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: inherit;
+  background: #000000;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%; 
+  transform: rotate(45deg);  
+}
+
+.inner:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);  
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
 }

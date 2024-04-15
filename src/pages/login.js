@@ -1,16 +1,19 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
+import {motion} from 'framer-motion'
 const Login=()=>{
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
+    const [admin,setAdmin]=useState(false)
     const {login,error,isLoading}=useLogin()
 
     const handleSubmit=async(e)=>{
         e.preventDefault()
-        await login(email,password)
+        console.log(admin)
+        await login(email,password,admin)
     }
     return(
-        <form className='login' onSubmit={handleSubmit}>
+        <motion.form className='login' onSubmit={handleSubmit}>
         <h3>Login</h3>
         <label>Email</label>
         <input
@@ -24,9 +27,17 @@ const Login=()=>{
         onChange={(e)=>setPassword(e.target.value)}
         value={password}
         />
-        <button disabled={isLoading}>Login</button>
+        <p for="admin">Admin Login?</p>
+        <input className="check"
+        id="admin"
+        type='checkbox'
+        onChange={(e)=>{setAdmin(e.target.checked)
+        }}
+        />
+       
+        <motion.button disabled={isLoading} whileHover={{scale:1.1}}>Login</motion.button>
         {error && <div className='error'>{error}</div>}
-    </form>
+    </motion.form>
     )
 }
 export default Login
