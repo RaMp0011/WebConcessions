@@ -69,10 +69,10 @@ export default function ConcDetails({conc}){
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
         {!admin ? <div class="note"><label>Note:</label>
-        <p>You have to fill the form in order to apply for concession</p>
-        <p>Approvel of concession are subject to IR regulation</p>
-        <p>Fill the details correctly</p>
-        <p>Your application will be responded with 2 to 3 working days</p></div>:false}
+       <p>1.You have to fill the form in order to apply for concession</p>
+        <p>2.Approvel of concession are subject to IR regulation</p>
+        <p>3.Fill the details correctly</p>
+        <p>4.Your application will be responded with 2 to 3 working days</p></div>:false}
         </div>
     )
 }
