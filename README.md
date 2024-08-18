@@ -39,7 +39,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-##`Create a cluster in mongoDB in it DB with name test`
+## `Create a cluster in mongoDB in it DB with name test`
     Important Collections which are must:-
         1. aorganizations //for college admin
             {"_id":{"$oid":"6606fb0556e9f773e2a5db04"},
